@@ -3,5 +3,35 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title Фитнес
+    link(rel="stylesheet", href="css/style.min.css")
   body
+    div(style="display: none")
+      include ../build/img/sprite.svg
+    header.header
+      .container
+        a.header__logo(href="#") Supergym
+        a.header__tel(href="tel:+88005555555") 8-800-555-55-55
+    main
+      section.main
+        .container
+          .main__text-wrapper
+            p.main__city омск
+            .main__header-wrapper
+              h1.main__header Фитнес центр
+              ul.main__gym-list
+                li Тренажёрный зал
+                li Групповые занятия
+                li Кардио-зона
+            a.main__buy(href="#") Купить абонемент
+          picture
+            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.png")
+            source(media="(min-width: 768px)" srcset="img/header-img-tablet.png")
+            img.main__img(src="img/header-img-desktop.png", alt="")
+          ul.main__socials
+            li
+              a(href="#") FB
+            li
+              a(href="#") VK
+            li
+              a(href="#") IG

@@ -1,0 +1,45 @@
+.header {
+  font-family: 'BebasNeue';
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+
+  a {
+    color: white;
+  }
+
+  .container {
+    position: absolute;
+    
+    display: flex;
+    padding-top: 18px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media ($tablet) {
+  .header {
+    font-size: 24px;
+    line-height: 24px;
+
+    .container {
+      padding-top: 38px;
+    }
+  }
+}
+
+@media ($desktop) {
+  .header {
+    font-size: 26px;
+    line-height: 26px;
+
+    .container {
+      padding-top: 28px;
+    }
+  }
+
+  .header__tel {
+    letter-spacing: 0.04em;
+  }
+}

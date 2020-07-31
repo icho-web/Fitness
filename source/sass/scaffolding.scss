@@ -1,3 +1,6 @@
+$tablet: 'min-width: 768px';
+$desktop: 'min-width: 1200px';
+
 *,
 *::before,
 *::after {
@@ -11,7 +14,10 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 140%;
 }
 
 .visually-hidden {
@@ -28,4 +34,21 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.container {
+  padding: 0 4.8%;
+  margin: 0 auto;
+}
+
+@media ($tablet) {
+  .container {
+    padding: 0 5.9%;
+  }
+}
+
+@media ($desktop) {
+  .container {
+    padding: 0 7.6%;
+  }
 }
