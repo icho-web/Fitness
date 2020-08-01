@@ -25,9 +25,10 @@ html(lang="en")
                 li Кардио-зона
             a.main__buy(href="#") Купить абонемент
           picture
-            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.png")
-            source(media="(min-width: 768px)" srcset="img/header-img-tablet.png")
-            img.main__img(src="img/header-img-desktop.png", alt="")
+            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.webp 1x, img/header-img-desktop@2x.webp 2x")
+            source(media="(min-width: 768px)" srcset="img/header-img-tablet.webp 1x, img/header-img-tablet@2x.webp 2x")
+            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.png 1x, img/header-img-desktop@2x.png 2x")  
+            img.main__img(src="img/header-img-tablet.png" srcset="img/header-img-tablet@2x.png 2x" width="324" height="390" alt="Фитнес центр")
           ul.main__socials
             li
               a(href="#") FB
@@ -35,3 +36,101 @@ html(lang="en")
               a(href="#") VK
             li
               a(href="#") IG
+      section.gym
+        .container
+          .gym__text-wrapper
+            h2.gym__header Тренажерный зал
+            p.gym__desc Просторный зал площадью 900 кв/м
+            p.gym__text.gym__text--desc Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для  всех спортсменов.
+            p.gym__text.gym__text--equipment В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых   занятий.
+          .gym__img-wrapper
+            picture
+              source(media="(min-width: 1200px)" srcset="img/gum-desktop.png 1x, img/gum-desktop@2x.png 2x")
+              source(media="(min-width: 768px)" srcset="img/gum-tablet.png 1x, img/gum-tablet@2x.png 2x")
+              img.gym__gym(src="img/gum-mobile.png" srcset="img/gum-mobile@2x.png 2x" alt="Тренажерный зал")
+            .gym__video
+              picture
+                source(media="(min-width: 1200px)" srcset="img/gum-video-desktop.png 1x, img/gum-video-desktop@2x.png 2x")
+                source(media="(min-width: 768px)" srcset="img/gum-video-tablet.png 1x, img/gum-video-tablet@2x.png 2x")
+                img(src="img/gum-video-mobile.png" srcset="img/gum-video-mobile@2x.png 2x" alt="Тренажерный зал")
+              img.gym__play(src="img/play.png" width="73" height="73" alt="Запустить видео")
+      section.season
+        .container
+          h2.season__header Абонементы
+          img.season__barbells(src="img/barbells-tablet.png", alt="")
+          .season__buttons-wrapper
+            ul.season__buttons
+              li.season__button
+                label(for="one") 1 месяц
+                input.visually-hidden(type="radio", name="Абонементы" id="one" checked)
+              li.season__button
+                label(for="six") 6 месяцев
+                input.visually-hidden(type="radio", name="Абонементы" id="six")
+              li.season__button
+                label(for="twelve") 12 месяцев
+                input.visually-hidden(type="radio", name="Абонементы" id="twelve")
+          ul.season__tabs
+            li.season__tab.season__tab--open
+              ul.season__tab-list
+                li.season__tab-item
+                  h3.season__h3 С тренером
+                  p.season__time 12 занятий
+                  p.season__price-shadow 5000
+                  p.season__price 5000
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Дневной
+                  p.season__time с 8:00 до 17:00
+                  p.season__price-shadow 1700
+                  p.season__price 1700
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Полный день
+                  p.season__time с 8:00 до 22:00
+                  p.season__price-shadow 2700 
+                  p.season__price 2700
+                  a.season__buy(href="#") купить абонемент
+            li.season__tab
+              ul.season__tab-list
+                li.season__tab-item
+                  h3.season__h3 С тренером
+                  p.season__time 72 занятий
+                  p.season__price-shadow 30000
+                  p.season__price 30000
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Дневной
+                  p.season__time с 8:00 до 17:00 
+                  p.season__price-shadow 10200
+                  p.season__price 10200
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Полный день
+                  p.season__time с 8:00 до 22:00 
+                  p.season__price-shadow 16200
+                  p.season__price 16200
+                  a.season__buy(href="#") купить абонемент
+            li.season__tab
+              ul.season__tab-list
+                li.season__tab-item
+                  h3.season__h3 С тренером
+                  p.season__time 144 занятий
+                  p.season__price-shadow 60000
+                  p.season__price 60000
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Дневной
+                  p.season__time с 8:00 до 17:00 
+                  p.season__price-shadow 20400
+                  p.season__price 20400
+                  a.season__buy(href="#") купить абонемент
+                li.season__tab-item
+                  h3.season__h3 Полный день
+                  p.season__time с 8:00 до 22:00
+                  p.season__price-shadow 32400
+                  p.season__price 32400
+                  a.season__buy(href="#") купить абонемент
+    script
+      // Picture element HTML5 shiv
+      document.createElement( "picture" )
+    script(src="js/picturefill.min.js" async)

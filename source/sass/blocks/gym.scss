@@ -1,0 +1,174 @@
+.gym {
+  color: $dark-blue;
+  margin-bottom: 64px;
+
+  .container {
+    padding: 0;
+    padding-top: 42px;
+  }
+}
+
+.gym__text-wrapper {
+  padding: 0 4.8%;
+}
+
+.gym__header {
+  margin-bottom: 6px;
+
+  font-family: 'BebasNeue';
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+}
+
+.gym__desc {
+  margin-top: 6px;
+  margin-bottom: 24px;
+
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.gym__text {
+  margin-bottom: 33px;
+  padding-right: 30px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+
+  &--equipment {
+    display: none;
+  }
+}
+
+.gym__img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100vw;
+}
+
+.gym__gym {
+  margin-bottom: 34px;
+}
+
+.gym__video {
+  position: relative;
+}
+
+.gym__play {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 47px;
+}
+
+@media($tablet) {
+  .gym {
+    margin-bottom: 94px;
+    
+    .container {
+      padding-top: 64px;
+    }
+  }
+
+  .gym__text-wrapper {
+    padding: 0 17%;
+    text-align: center;
+  }
+
+  .gym__header {
+    margin-bottom: 9px;
+
+    font-size: 42px;
+    line-height: 42px;
+    letter-spacing: 0.03em;
+  }
+
+  .gym__desc {
+    margin-bottom: 34px;
+  }
+
+  .gym__text {
+    padding-right: 0;
+    margin-bottom: 43px;
+  }
+
+  .gym__img-wrapper {
+    padding: 0 5.9%;
+  }
+
+  .gym__video {
+    margin: 0 auto;
+    width: max-content;
+  }
+  
+  .gym__gym {
+    margin-bottom: -90px;
+  }
+}
+
+@media ($desktop) {
+  .gym {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 7.6%;
+      padding-top: 120px;
+    }
+  }
+
+  .gym__header {
+    font-size: 49px;
+    line-height: 49px;
+  }
+
+  .gym__text-wrapper {
+    width: 30.2%;
+    margin-right: 12px;
+    padding: 0;
+    padding-top: 6px;
+    margin-left: 5.1%;
+
+    text-align: left;
+  }
+
+  .gym__desc {
+    margin-bottom: 38px;
+  }
+
+  .gym__text {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    &--equipment {
+      display: block;
+    }
+  }
+
+  .gym__img-wrapper {
+    width: 722px;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .gym__video {
+    margin: 0;
+    width: 364px;
+    height: 228px;
+  }
+
+  .gym__gym {
+    margin-bottom: -119px;
+    padding-left: 63px;
+  }
+
+  .gym__play {
+    top: 64px;
+
+    width: 100px;
+    height: 100px;
+  }
+}
