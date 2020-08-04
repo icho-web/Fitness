@@ -1,3 +1,4 @@
+include modules/mixins
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -5,30 +6,36 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Фитнес
     link(rel="stylesheet", href="css/style.min.css")
+    link(rel="preload" href="fonts/BebasNeueBold.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    link(rel="preload" href="fonts/BebasNeueRegular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
   body
     div(style="display: none")
       include ../build/img/sprite.svg
     header.header
       .container
-        a.header__logo(href="#") Supergym
+        a(href="")
+          svg.header__logo(width="87" height="20")
+            use(xlink:href="#logo")
         a.header__tel(href="tel:+88005555555") 8-800-555-55-55
     main
       section.main
         .container
           .main__text-wrapper
-            p.main__city омск
+            p омск
             .main__header-wrapper
-              h1.main__header Фитнес центр
+              h1 Фитнес центр
               ul.main__gym-list
                 li Тренажёрный зал
                 li Групповые занятия
                 li Кардио-зона
             a.main__buy(href="#") Купить абонемент
-          picture
-            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.webp 1x, img/header-img-desktop@2x.webp 2x")
-            source(media="(min-width: 768px)" srcset="img/header-img-tablet.webp 1x, img/header-img-tablet@2x.webp 2x")
-            source(media="(min-width: 1200px)" srcset="img/header-img-desktop.png 1x, img/header-img-desktop@2x.png 2x")  
-            img.main__img(src="img/header-img-tablet.png" srcset="img/header-img-tablet@2x.png 2x" width="324" height="390" alt="Фитнес центр")
+          .main__img.main__img--desktop
+            +picture(desktop, "header-img-desktop", "508", "564", "Фитнес центр")
+          .main__img.main__img--tablet
+            +picture(mobile, "header-img-tablet", "324", "390", "Фитнес центр")
           ul.main__socials
             li
               a(href="#") FB
@@ -39,36 +46,45 @@ html(lang="en")
       section.gym
         .container
           .gym__text-wrapper
-            h2.gym__header Тренажерный зал
-            p.gym__desc Просторный зал площадью 900 кв/м
-            p.gym__text.gym__text--desc Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для  всех спортсменов.
-            p.gym__text.gym__text--equipment В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых   занятий.
+            h2 Тренажерный зал
+            b Просторный зал площадью 900 кв/м
+            p Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для  всех спортсменов.
+            p.gym__equipment В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых   занятий.
           .gym__img-wrapper
-            picture
-              source(media="(min-width: 1200px)" srcset="img/gum-desktop.png 1x, img/gum-desktop@2x.png 2x")
-              source(media="(min-width: 768px)" srcset="img/gum-tablet.png 1x, img/gum-tablet@2x.png 2x")
-              img.gym__gym(src="img/gum-mobile.png" srcset="img/gum-mobile@2x.png 2x" alt="Тренажерный зал")
+            .gym__gym-wrapper
+              .gym__img.gym__img--desktop
+                +picture(desktop, "gum-desktop", "660", "401", "Тренажерный зал")
+              .gym__img.gym__img--tablet
+                +picture(tablet, "gum-tablet", "678", "345", "Тренажерный зал")
+              .gym__img.gym__img--mobile
+                +picture(mobile, "gum-mobile", "320", "313", "Тренажерный зал")
             .gym__video
-              picture
-                source(media="(min-width: 1200px)" srcset="img/gum-video-desktop.png 1x, img/gum-video-desktop@2x.png 2x")
-                source(media="(min-width: 768px)" srcset="img/gum-video-tablet.png 1x, img/gum-video-tablet@2x.png 2x")
-                img(src="img/gum-video-mobile.png" srcset="img/gum-video-mobile@2x.png 2x" alt="Тренажерный зал")
-              img.gym__play(src="img/play.png" width="73" height="73" alt="Запустить видео")
+              .gym__video-img.gym__video-img--desktop
+                +picture(desktop, "gum-video-desktop", "364", "228", "Видео тренажерного зала")
+              .gym__video-img.gym__video-img--tablet
+                +picture(tablet, "gum-video-tablet", "266", "167", "Видео тренажерного зала")
+              .gym__video-img.gym__video-img--mobile
+                +picture(mobile, "gum-video-mobile", "320", "167", "Видео тренажерного зала")
+              button(type="button").gym__play
+                img(src="img/play.png" width="73" height="73" alt="Запустить видео")
       section.season
+        .season__barbells.season__barbells--desktop
+          +picture(desktop, "barbells-desktop", "287", "494", "Блины для штанги")
+        .season__barbells.season__barbells--tablet
+          +picture(desktop, "barbells-tablet", "347", "444", "Блины для штанги")
         .container
-          h2.season__header Абонементы
-          img.season__barbells(src="img/barbells-tablet.png", alt="")
+          h2 Абонементы
           .season__buttons-wrapper
             ul.season__buttons
               li.season__button
-                label(for="one") 1 месяц
                 input.visually-hidden(type="radio", name="Абонементы" id="one" checked)
+                label(for="one") 1 месяц
               li.season__button
-                label(for="six") 6 месяцев
                 input.visually-hidden(type="radio", name="Абонементы" id="six")
+                label(for="six") 6 месяцев
               li.season__button
-                label(for="twelve") 12 месяцев
                 input.visually-hidden(type="radio", name="Абонементы" id="twelve")
+                label(for="twelve") 12 месяцев
           ul.season__tabs
             li.season__tab.season__tab--open
               ul.season__tab-list
@@ -87,26 +103,26 @@ html(lang="en")
                 li.season__tab-item
                   h3.season__h3 Полный день
                   p.season__time с 8:00 до 22:00
-                  p.season__price-shadow 2700 
+                  p.season__price-shadow 2700
                   p.season__price 2700
                   a.season__buy(href="#") купить абонемент
             li.season__tab
               ul.season__tab-list
                 li.season__tab-item
                   h3.season__h3 С тренером
-                  p.season__time 72 занятий
+                  p.season__time 72 занятия
                   p.season__price-shadow 30000
                   p.season__price 30000
                   a.season__buy(href="#") купить абонемент
                 li.season__tab-item
                   h3.season__h3 Дневной
-                  p.season__time с 8:00 до 17:00 
+                  p.season__time с 8:00 до 17:00
                   p.season__price-shadow 10200
                   p.season__price 10200
                   a.season__buy(href="#") купить абонемент
                 li.season__tab-item
                   h3.season__h3 Полный день
-                  p.season__time с 8:00 до 22:00 
+                  p.season__time с 8:00 до 22:00
                   p.season__price-shadow 16200
                   p.season__price 16200
                   a.season__buy(href="#") купить абонемент
@@ -114,13 +130,13 @@ html(lang="en")
               ul.season__tab-list
                 li.season__tab-item
                   h3.season__h3 С тренером
-                  p.season__time 144 занятий
+                  p.season__time 144 занятия
                   p.season__price-shadow 60000
                   p.season__price 60000
                   a.season__buy(href="#") купить абонемент
                 li.season__tab-item
                   h3.season__h3 Дневной
-                  p.season__time с 8:00 до 17:00 
+                  p.season__time с 8:00 до 17:00
                   p.season__price-shadow 20400
                   p.season__price 20400
                   a.season__buy(href="#") купить абонемент
@@ -130,7 +146,29 @@ html(lang="en")
                   p.season__price-shadow 32400
                   p.season__price 32400
                   a.season__buy(href="#") купить абонемент
-    script
-      // Picture element HTML5 shiv
+      section.promo
+        .container
+          .promo__wrapper
+            .promo__text-wrapper
+              h2.promo__header SUPER GAMES
+              .promo__date
+                h3.promo__h3 Дата
+                .promo__time
+                  p.promo__number 7
+                  .promo__month
+                    p.promo__text Марта
+                    p.promo__text 2019
+                h3.promo__h3 Время
+                p.promo__number.promo__number--time 12:00
+            p.promo__desc Ежегодные соревнования по CrossFit
+            a.promo__button(href="#") заполнить заявку
+          .promo__img.promo__img--desktop
+            +picture(desktop, "promo-img-desktop", "660", "500", "Промо Super Games")
+          .promo__img.promo__img--tablet
+            +picture(desktop, "promo-img-tablet", "386", "292", "Промо Super Games")
+          .promo__img.promo__img--mobile
+            +picture(desktop, "promo-img-mobile", "290", "292", "Промо Super Games")
+    script.
       document.createElement( "picture" )
-    script(src="js/picturefill.min.js" async)
+    script(src="js/vendor.js")
+    script(src="js/main.js")

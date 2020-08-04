@@ -1,7 +1,9 @@
 .main {
-  background-image: url('../img/main-bg-mobile.png');
+  background-image: url("../img/main-bg-desktop.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-color: #b60129;
+
   color: white;
 
   a {
@@ -10,204 +12,254 @@
 
   .container {
     display: flex;
-    padding-top: 112px;
-    padding-bottom: 78px;
+    padding-top: 51px;
+    padding-bottom: 37px;
+  }
+
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/main-bg-desktop@2x.png");
+  }
+}
+
+.main__img {
+  display: none;
+
+  img {
+    width: 508px;
+    height: 564px;
+  }
+
+  &--desktop {
+    display: block;
   }
 }
 
 .main__text-wrapper {
-  width: 100%;
+  width: 395px;
+  margin-right: 5.2%;
+  padding-top: 116px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 13px;
+
+    font-family: "BebasNeue", Arial, sans-serif;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+    text-align: right;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-family: "BebasNeue", Arial, sans-serif;
+    font-size: 109px;
+    line-height: 109px;
+    text-align: right;
+    letter-spacing: 0.03em;
+
+    -webkit-text-stroke: 3px white;
+  }
 }
 
 .main__header-wrapper {
   position: relative;
-  margin-bottom: 42px;
-  display: flex;
+
+  margin-bottom: 56px;
 }
 
-.main__city {
+.main__gym-list,
+.main__socials {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  margin-bottom: 12px;
-
-  text-align: right;
-  font-family: 'BebasNeue';
-  font-size: 28px;
-  line-height: 28px;
-  letter-spacing: 0.03em;
-}
-
-.main__header {
-  width: 290px;
-  margin: 0;
-  margin-left: auto;
-
-  font-family: 'BebasNeue';
-  font-size: 78px;
-  line-height: 78px;
-  text-align: right;
-  letter-spacing: 0.03em;
-
-  -webkit-text-stroke: 3px white;
 }
 
 .main__gym-list {
   position: absolute;
-  bottom: 12px;
-  left: -1px;
-
-  padding: 0;
-  margin: 0;
+  left: 19px;
+  bottom: 28px;
 
   font-size: 14px;
   line-height: 150%;
+
   text-align: right;
-  list-style: none;
 }
 
 .main__buy {
+  width: 234px;
+  margin-right: -1px;
+  padding: 19.5px 0px;
   display: block;
-  padding: 21px 0 20px;
-  width: calc(100% + 4px);
-  margin-left: -2px;
+  margin-left: auto;
 
-  text-align: center;
-  font-family: 'RobotoCondensed';
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-align: center;
 
-  border: 4px solid white;
-}
+  border: 4px solid #FFFFFF;
 
-.main__img {
-  display: none;
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
 }
 
 .main__socials {
-  display: none;
-  list-style: none;
+  margin-left: auto;
+  padding-top: 434px;
+
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  text-transform: uppercase;
 
   li {
-    font-family: 'RobotoCondensed';
-    font-size: 12px;
-    line-height: 14px;
-    text-align: right;
-    text-transform: uppercase;
+    a {
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:active {
+        opacity: 0.2;
+      }
+    }
+
+    margin-bottom: 19px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 @media ($tablet) {
-  .main__img {
-    display: block;
-  }
-
   .main {
-    background-image: url('../img/main-bg-tablet.png');
+    background-image: url("../img/main-bg-tablet.png");
 
     .container {
-      display: flex;
       justify-content: space-between;
       padding-top: 82px;
-      padding-bottom: 82px;
+      padding-bottom: 76px;
+    }
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/main-bg-tablet@2x.png");
     }
   }
 
-  .main__city {
-    margin-bottom: 6px;
+  .main__img {
+    img {
+      width: 324px;
+      height: 390px;
+    }
 
-    font-size: 34px;
-    line-height: 34px;
-  }
+    &--desktop {
+      display: none;
+    }
 
-  .main__header {
-    font-size: 86px;
-    line-height: 86px;
+    &--tablet {
+      display: block;
+    }
   }
 
   .main__text-wrapper {
-    width: 354px;
+    width: 324px;
     padding-top: 54px;
-    padding-right: 30px;
-  }
+    margin-right: 4.4%;
 
-  .main__gym-list {
-    bottom: 17px;
-    left: 0;
+    p {
+      margin-bottom: 6px;
+
+      font-size: 34px;
+      line-height: 34px;
+    }
   }
 
   .main__header-wrapper {
     margin-bottom: 40px;
-  }
 
-  .main__buy {
-    width: 57.8%;
-    margin-left: auto;
-    margin-right: -2px;
-    padding: 21px 0 18px;
-  }
-}
-
-@media ($desktop) {
-  .main {
-    background-image: url('../img/main-bg-desktop.png');
-
-    .container {
-      justify-content: unset;
-      padding-top: 51px;
-      padding-bottom: 43px;
+    h1 {
+      font-size: 86px;
+      line-height: 86px;
     }
   }
 
   .main__socials {
-    margin-left: auto;
-
-    padding-left: 0;
-    padding-top: 418px;
-    display: block;
-
-    li {
-      margin-bottom: 19px;
-    }
-  }
-
-  .main__city {
-    margin-bottom: 13px;
-
-    font-size: 49px;
-    line-height: 49px;
-  }
-
-  .main__header {
-    width: 300px;
-    font-weight: bold;
-    font-size: 109px;
-    line-height: 109px;
-  }
-
-  .main__text-wrapper {
-    margin-right: 2.6%;
-    width: 425px;
-    padding-top: 116px;
-  }
-
-  .main__header-wrapper {
-    margin-bottom: 56px;
-  }
-
-  .main__buy {
-    width: 59.5%;
+    display: none;
   }
 
   .main__gym-list {
-    bottom: 28px;
-    left: 19px;
+    left: 0px;
+    bottom: 17px;
+  }
+
+  .main__buy {
+    width: 187px;
+    margin-right: -2px;
+  }
+}
+
+@media ($mobile) {
+  .main {
+    background-image: url("../img/main-bg-mobile.png");
+
+    .container {
+      padding-top: 58px;
+      padding-bottom: 78px;
+    }
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/main-bg-mobile@2x.png");
+    }
   }
 
   .main__img {
-    width: 508px;
-    height: 564px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    &--tablet {
+      display: none;
+    }
+  }
+
+  .main__text-wrapper {
+    width: 100%;
+    margin-right: 0;
+
+    h1 {
+      font-size: 78px;
+      line-height: 78px;
+    }
+
+    p {
+      margin-bottom: 12px;
+
+      font-size: 28px;
+      line-height: 28px;
+    }
+  }
+
+  .main__gym-list {
+    left: -1px;
+    bottom: 12px;
+  }
+
+  .main__header-wrapper {
+    width: 290px;
+    margin-left: auto;
+    margin-bottom: 42px;
+  }
+
+  .main__buy {
+    padding: 20.5px 0;
+    width: calc(100% + 4px);
+    margin-right: 0;
+    margin-left: -2px;
   }
 }

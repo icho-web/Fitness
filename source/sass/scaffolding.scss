@@ -1,11 +1,14 @@
-$tablet: 'min-width: 768px';
-$desktop: 'min-width: 1200px';
+$desktop:"min-width: 1366px";
+$mobile: "max-width: 767.8px";
+$tablet: "max-width: 1199.8px";
+$retina-dppx: 1.5dppx;
 
-$blue: #495A7D;
-$shadow: #E8E8E8;
+$red: #ed0233;
+$blue: #495a7d;
+$blue-price: #103aae;
 $dark-blue: #102654;
-$grey: #F8F9FC;
-$price-blue: #103AAE;
+$shadow: #e8e8e8;
+$grey: #f8f9fc;
 
 *,
 *::before,
@@ -20,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'RobotoCondensed';
+  font-family: "RobotoCondensed", Arial, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 140%;
@@ -43,8 +46,15 @@ a {
 }
 
 .container {
-  padding: 0 4.8%;
+  padding: 0 7.6%;
   margin: 0 auto;
+}
+
+@media ($desktop) {
+  .container {
+    width: 1366px;
+    padding: 0 104px;
+  }
 }
 
 @media ($tablet) {
@@ -53,8 +63,8 @@ a {
   }
 }
 
-@media ($desktop) {
+@media ($mobile) {
   .container {
-    padding: 0 7.6%;
+    padding: 0 4.8%;
   }
 }

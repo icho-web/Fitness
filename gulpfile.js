@@ -11,10 +11,28 @@ var del = require('del');
 var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 var pug = require('gulp-pug');
+var concat = require('gulp-concat');
+var babel = require('gulp-babel');
+
+gulp.task('vendor', function() {
+  return gulp.src('source/js/vendor/*.js')
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('main', function() {
+  return gulp.src('source/js/main/*.js')
+    .pipe(concat('main.js'))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(gulp.dest('build/js'));
+});
 
 gulp.task('pug', function buildHTML() {
   return gulp.src('source/*.pug')
   .pipe(pug({
+    pretty: true
   }))
   .pipe(gulp.dest('build'));
 });
@@ -46,12 +64,23 @@ gulp.task('css', function () {
   .pipe(postcss([
     autoprefixer()
   ]))
+  .pipe(gulp.dest('build/css'))
+});
+
+gulp.task('csso', function () {
+  return gulp.src('source/sass/style.scss')
+  .pipe(plumber())
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(postcss([
+    autoprefixer()
+  ]))
   .pipe(csso())
   .pipe(rename('style.min.css'))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('build/css'))
   .pipe(server.stream());
-})
+});
 
 gulp.task('refresh', function (done) {
   server.reload();
@@ -67,10 +96,10 @@ gulp.task('server', function () {
     ui: false
   });
 
-  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css'));
+  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css', 'csso'));
   gulp.watch('source/*.pug', gulp.series('pug', 'refresh'));
   gulp.watch('source/modules/*.pug', gulp.series('pug', 'refresh'));
-  gulp.watch('source/js/*.js', gulp.series('copy', 'refresh'));
+  gulp.watch('source/js/**/*.js', gulp.series('main', 'vendor', 'refresh'));
   gulp.watch('source/svg/*.svg', gulp.series('sprite', 'copy', 'refresh'));
   gulp.watch('source/img/**', gulp.series('webp', 'copy', 'refresh'));
 });
@@ -78,7 +107,6 @@ gulp.task('server', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'source/img/**',
-    'source/js/**',
     'source/fonts/**'
   ], {
     base: 'source'
@@ -90,8 +118,11 @@ gulp.task('build', gulp.series(
   'clean',
   'sprite',
   'webp',
+  'main',
+  'vendor',
   'copy',
   'css',
+  'csso',
   'pug'
 ));
 

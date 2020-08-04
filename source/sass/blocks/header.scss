@@ -1,45 +1,78 @@
 .header {
-  font-family: 'BebasNeue';
-  font-size: 20px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-
-  a {
-    color: white;
-  }
-
   .container {
     position: absolute;
-    
+
+    padding-top: 30px;
     display: flex;
-    padding-top: 18px;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
   }
 }
 
-@media ($tablet) {
-  .header {
-    font-size: 24px;
-    line-height: 24px;
+.header__tel {
+  display: block;
+  margin: 0;
 
-    .container {
-      padding-top: 38px;
-    }
+  font-family: "BebasNeue", Arial, sans-serif;
+  font-size: 26px;
+  line-height: 23px;
+  letter-spacing: .038em;
+
+  color: white;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
   }
 }
 
 @media ($desktop) {
   .header {
-    font-size: 26px;
-    line-height: 26px;
-
     .container {
-      padding-top: 28px;
+      left: 50%;
+      transform: translate(-50%);
+
+      width: 1366px;
+    }
+  }
+}
+
+@media ($tablet) {
+  .header {
+    .container {
+      padding-top: 38px;
     }
   }
 
   .header__tel {
-    letter-spacing: 0.04em;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+  }
+
+  .header__logo {
+    width: 82px;
+    height: 22px;
+  }
+}
+
+@media ($mobile) {
+  .header {
+    .container {
+      padding-top: 18px;
+    }
+  }
+
+  .header__tel {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .header__logo {
+    width: 68px;
+    height: 19px;
   }
 }
