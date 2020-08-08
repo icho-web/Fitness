@@ -65,6 +65,14 @@
     text-transform: uppercase;
 
     color: white;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.2;
+    }
   }
 
   .actions__year {
@@ -141,6 +149,14 @@
     text-transform: uppercase;
 
     color: $dark-blue;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.2;
+    }
   }
 }
 

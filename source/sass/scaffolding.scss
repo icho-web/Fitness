@@ -10,11 +10,31 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: "RobotoCondensed", Arial, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 140%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
 }
 
 .visually-hidden {
