@@ -14,13 +14,9 @@
   color: $dark-blue;
 
   h2 {
+    @include h2(49px);
     margin-top: 47px;
     margin-bottom: 8px;
-
-    font-family: "BebasNeue", Arial, sans-serif;
-    font-size: 49px;
-    line-height: 49px;
-    letter-spacing: 0.03em;
   }
 
   b {
@@ -132,10 +128,8 @@
     text-align: center;
 
     h2 {
+      @include h2(42px);
       margin-bottom: 9px;
-
-      font-size: 42px;
-      line-height: 42px;
     }
 
     b {
@@ -227,10 +221,8 @@
     }
 
     h2 {
+      @include h2(32px);
       margin-bottom: 6px;
-
-      font-size: 32px;
-      line-height: 32px;
     }
 
     b {

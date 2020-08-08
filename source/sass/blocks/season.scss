@@ -11,16 +11,11 @@
     padding-top: 118px;
 
     h2 {
+      @include h2(49px);
       margin-top: 0;
       margin-bottom: 35px;
 
       text-align: center;
-      font-family: 'BebasNeue';
-      font-size: 49px;
-      line-height: 49px;
-      letter-spacing: 0.03em;
-
-      color: $dark-blue;
     }
   }
 }
@@ -257,8 +252,7 @@
       h2 {
         margin-bottom: 30px;
 
-        font-size: 42px;
-        line-height: 42px;
+        @include h2(42px);
       }
     }
   }
@@ -295,7 +289,7 @@
   }
 
   .season__tab-item {
-    padding-bottom: 53px;
+    padding-bottom: 67px;
     width: 100%;
     margin-right: 0;
     margin-bottom: 40px;
@@ -305,7 +299,7 @@
     }
 
     &:hover {
-      padding-bottom: 47px;
+      padding-bottom: 61px;
 
       .season__buy {
         width: 48%;
@@ -318,7 +312,7 @@
   }
 
   .season__barbells {
-    bottom: -125px;
+    bottom: -131px;
 
     &--desktop {
       display: none;
@@ -344,8 +338,7 @@
       h2 {
         margin-bottom: 22px;
 
-        font-size: 32px;
-        line-height: 32px;
+        @include h2(32px);
       }
     }
   }

@@ -1,0 +1,162 @@
+.reviews {
+  margin-bottom: 120px;
+
+  h2 {
+    @include h2(49px);
+    margin-bottom: 52px;
+
+    text-align: center;
+  }
+}
+
+.reviews__slider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reviews__slide {
+  display: none;
+  padding: 54px 11.1% 41px 11%;
+
+  color: white;
+  background-color: $dark-blue;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.reviews__img {
+  padding-top: 8px;
+  padding-right: 6.6%;
+}
+
+.reviews__text {
+  h3 {
+    margin-top: 0;
+    margin-bottom: -3px;
+
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+
+.reviews__button {
+  position: absolute;
+  top: 105px;
+
+  width: 16px;
+  height: 32px;
+
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--left {
+    left: 21%;
+
+    background-image: url("../img/arrow-left.svg");
+  }
+
+  &--right {
+    right: 21%;
+
+    background-image: url("../img/arrow-right.svg");
+  }
+}
+
+.reviews__slider-wrapper {
+  position: relative;
+  padding: 0 25.8%;
+}
+
+
+@media ($tablet) {
+  .reviews {
+    margin-bottom: 100px;
+
+    h2 {
+      @include h2(42px);
+      margin-bottom: 41px;
+    }
+  }
+
+  .reviews__slide {
+    padding: 54px 11.1% 41px 11.3%;
+  }
+
+  .reviews__button {
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  .reviews__slider-wrapper {
+    padding: 0 8.2%;
+  }
+}
+
+@media($mobile) {
+  .reviews {
+    margin-bottom: 70px;
+
+    h2 {
+      @include h2(32px);
+      margin-bottom: 43px;
+    }
+  }
+
+  .reviews__slide {
+    padding: 32px 11.1% 20px 10.6%;
+  }
+
+  .reviews__slider-wrapper {
+    padding: 0 11.1%;
+  }
+
+  .reviews__img {
+    position: absolute;
+    margin-left: 17px;
+
+    img {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  .reviews__text {
+    h3 {
+      width: 77px;
+      min-height: 68px;
+      margin-left: 100px;
+      margin-bottom: 23px;
+      padding-top: 16px;
+
+      line-height: 130%;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .reviews__button {
+    top: 158px;
+    width: 17px;
+    height: 19px;
+  }
+}

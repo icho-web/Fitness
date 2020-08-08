@@ -1,0 +1,23 @@
+$desktop:"min-width: 1366px";
+$mobile: "max-width: 767.8px";
+$tablet: "max-width: 1199.8px";
+$retina-dppx: 1.5dppx;
+
+$red: #ed0233;
+$blue: #495a7d;
+$blue-price: #103aae;
+$dark-blue: #102654;
+$shadow: #e8e8e8;
+$grey: #f8f9fc;
+
+$bebas: "BebasNeue", Arial, sans-serif;
+$roboto: "RobotoCondensed", Arial, sans-serif;
+
+@mixin h2($font-size) {
+  font-family: $bebas;
+  font-size: $font-size;
+  line-height: $font-size;
+  letter-spacing: 0.03em;
+
+  color: $dark-blue;
+}

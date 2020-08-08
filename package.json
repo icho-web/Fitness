@@ -13,15 +13,12 @@
     "gulp-webp": "^4.0.1",
     "jquery": "^3.5.1",
     "posthtml-include": "^1.4.0",
-    "pug": "^2.0.4",
-    "swiper": "^5.3.8"
+    "pug": "^2.0.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
     "eslint": "^6.8.0",
     "eslint-config-htmlacademy": "^0.5.2",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
@@ -34,13 +31,14 @@
   "editorconfig-cli": [
     "*.js",
     "source/*.pug",
-    "source/js/**/*.js",
+    "source/js/main/*.js",
     "source/img/**/*.svg",
-    "source/sass/**/*.{sass,scss}"
+    "source/sass/*.scss",
+    "source/sass/blocks/*.scss"
   ],
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"source/sass/blocks/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp start"
