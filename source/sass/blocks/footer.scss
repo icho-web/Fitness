@@ -1,5 +1,5 @@
 .footer {
-  background-color: #030A1A;
+  background-color: #030a1a;
 
   .container {
     padding-top: 42px;
@@ -69,7 +69,7 @@
   }
 }
 
-@media($tablet) {
+@media ($tablet) {
   .footer {
     .container {
       padding-top: 46px;
@@ -90,7 +90,7 @@
   }
 }
 
-@media($mobile) {
+@media ($mobile) {
   .footer {
     .container {
       padding-top: 48px;

@@ -91,7 +91,7 @@
 .main__buy {
   width: 234px;
   margin-right: -1px;
-  padding: 19.5px 0px;
+  padding: 19.5px 0;
   display: block;
   margin-left: auto;
 
@@ -103,7 +103,7 @@
   text-align: center;
 
   cursor: pointer;
-  border: 4px solid #FFFFFF;
+  border: 4px solid white;
 
   &:hover {
     opacity: 0.5;
@@ -199,7 +199,7 @@
   }
 
   .main__gym-list {
-    left: 0px;
+    left: 0;
     bottom: 17px;
   }
 

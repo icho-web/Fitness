@@ -138,7 +138,7 @@
   color: $blue-price;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 24px;
 
@@ -146,14 +146,14 @@
     width: 30px;
     height: 42px;
 
-    background-image: url('../img/ruble.svg');
+    background-image: url("../img/ruble.svg");
     background-size: contain;
   }
 }
 
 .season__buy {
   width: 58%;
-  padding: 24px 0px;
+  padding: 24px 0;
   display: block;
   margin: 0 auto;
 
@@ -244,7 +244,7 @@
   }
 }
 
-@media($tablet) {
+@media ($tablet) {
   .season {
     .container {
       padding-top: 99px;
@@ -286,7 +286,7 @@
 
   .season__tab-list {
     flex-direction: column;
-    padding: 0px 17.4%;
+    padding: 0 17.4%;
   }
 
   .season__tab-item {

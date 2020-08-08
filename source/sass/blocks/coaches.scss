@@ -258,6 +258,11 @@
   }
 
   .coaches__img-wrapper {
+    img {
+      width: 226px;
+      height: 274px;
+    }
+
     &--tablet {
       display: none;
     }
@@ -282,13 +287,6 @@
     }
   }
 
-  .coaches__img-wrapper {
-    img {
-      width: 226px;
-      height: 274px;
-    }
-  }
-
   .coaches__slider-item {
     width: 100%;
   }
@@ -309,5 +307,3 @@
     padding-left: 50px;
   }
 }
-
-

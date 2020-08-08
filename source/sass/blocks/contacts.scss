@@ -98,7 +98,7 @@
 .contacts__contact {
   width: 50%;
 
-  border-top: 1px solid #74819C;
+  border-top: 1px solid #74819c;
 }
 
 .contacts__wrapper {
@@ -157,7 +157,7 @@
     width: 1px;
     height: 70.4%;
 
-    background-color: #74819C;
+    background-color: #74819c;
   }
 }
 
@@ -186,78 +186,7 @@
   }
 }
 
-.contacts__list-wrapper {
-  display: flex;
-  color: $dark-blue;
-
-  h3 {
-    margin-bottom: 3px;
-
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 150%;
-  }
-
-  p,
-  a {
-    margin-top: 3px;
-
-    font-size: 14px;
-    line-height: 21px;
-
-    color: $dark-blue;
-  }
-}
-
-.contacts__adrress-list {
-  position: relative;
-
-  width: 58%;
-  padding: 0;
-  padding-left: 4px;
-  margin: 0;
-
-  list-style: none;
-
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 22px;
-
-    width: 1px;
-    height: 70.4%;
-
-    background-color: #74819C;
-  }
-}
-
-.contacts__contact-list {
-  margin: 0;
-  margin-left: auto;
-  padding: 0;
-  list-style: none;
-
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:active {
-      opacity: 0.3;
-    }
-  }
-}
-
-.contacts__adrress-item {
-  margin-bottom: 18px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-@media($desktop) {
+@media ($desktop) {
   .contacts__signup-wrapper {
     margin-right: 170px;
   }
@@ -342,7 +271,7 @@
   }
 }
 
-@media($mobile) {
+@media ($mobile) {
   .contacts__text {
     @include h2(32px);
     margin-bottom: 34px;
@@ -394,8 +323,9 @@
     padding-bottom: 62px;
 
     h2 {
-      margin-bottom: 36px;
       @include h2(32px);
+
+      margin-bottom: 36px;
     }
 
     p {

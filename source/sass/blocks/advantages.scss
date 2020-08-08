@@ -82,7 +82,7 @@
 
   text-align: center;
 
-  background: #1C3374;
+  background: #1c3374;
   color: white;
 
   h3 {
@@ -123,7 +123,7 @@
   }
 }
 
-@media($tablet) {
+@media ($tablet) {
   .advantages {
     .container {
       padding-bottom: 62px;
@@ -222,6 +222,7 @@
 
   .advantages__text--900 {
     margin-right: auto;
+
     p {
       padding-right: 10%;
     }
@@ -242,7 +243,6 @@
 
     h2 {
       @include h2(32px);
-
     }
   }
 
@@ -306,6 +306,7 @@
 
   .advantages__text--900 {
     margin-right: 0;
+
     p {
       padding-right: 22%;
       padding-left: 22%;
