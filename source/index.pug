@@ -13,8 +13,6 @@ html(lang="en")
     link(rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous")
     link(rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
   body
-    div(style="display: none")
-      include ../build/img/sprite.svg
     .wrapper
       header.header
         .container
@@ -22,7 +20,7 @@ html(lang="en")
             svg.header__logo(width="87" height="20")
               use(xlink:href="#logo")
           a.header__tel(href="tel:+88005555555") 8-800-555-55-55
-      main
+      main.main-page
         section.main
           .container
             .main__text-wrapper
@@ -255,31 +253,31 @@ html(lang="en")
                 .advantages__text
                   h3 Тренерский опыт
                   p Добивайтесь своих целей быстрее с профессиональным тренером
-        section.actions
+        section.promo-actions
           .container
             h2 Акции
-            .actions__container
-              .actions__year-wrapper
-                .actions__text-wrapper
-                  p.actions__year Год
+            .promo-actions__container
+              .promo-actions__year-wrapper
+                .promo-actions__text-wrapper
+                  p.promo-actions__year Год
                   h3 4999
                   p Безлимитный абонемент в тренажерный зал
                   a(href="#") подробнее
-                .actions__img.actions__img--desktop
+                .promo-actions__img.promo-actions__img--desktop
                   <!-- 1х: 280px; 2x: 560px -->
                   +picture(desktop, "action-img-desktop", "280", "462", "Акция")
-                .actions__img.actions__img--tablet
+                .promo-actions__img.promo-actions__img--tablet
                   <!-- 1х: 399px; 2x: 798px -->
                   +picture(tablet, "action-img-tablet", "399", "462", "Акция")
-                .actions__img.actions__img--mobile
+                .promo-actions__img.promo-actions__img--mobile
                   <!-- 1х: 290px; 2x: 580px -->
                   +picture(mobile, "action-img-mobile", "290", "299", "Акция")
-              ul.actions__list
-                li.actions__item
+              ul.promo-actions__list
+                li.promo-actions__item
                   h3 Месяц бесплатно
-                  p.actions__referral Приведи друга, получи абонемент в подарок
+                  p.promo-actions__referral Приведи друга, получи абонемент в подарок
                   a(href="#") подробнее
-                li.actions__item
+                li.promo-actions__item
                   h3 Скидка 20%
                   p Корпоративный фитнес &nbsp;с командой
                   a(href="#") подробнее
@@ -370,5 +368,7 @@ html(lang="en")
               a(href="#" aria-label="Фейсбук")
                 svg(width="12" height="24")
                   use(xlink:href="#fb")
+    div(style="display: none")
+      include ../build/img/sprite.svg
     script(src="js/vendor.js")
     script(src="js/main.js")
