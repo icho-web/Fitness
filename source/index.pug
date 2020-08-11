@@ -12,6 +12,11 @@ html(lang="en")
     link(rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous")
     link(rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous")
     link(rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+    link(rel="preload" href="fonts/BebasNeueBold.woff" as="font" type="font/woff" crossorigin="anonymous")
+    link(rel="preload" href="fonts/BebasNeueRegular.woff" as="font" type="font/woff" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Bold.woff" as="font" type="font/woff" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Light.woff" as="font" type="font/woff" crossorigin="anonymous")
+    link(rel="preload" href="fonts/RobotoCondensed-Regular.woff" as="font" type="font/woff" crossorigin="anonymous")
   body
     .wrapper
       header.header
@@ -31,13 +36,13 @@ html(lang="en")
                   li Тренажёрный зал
                   li Групповые занятия
                   li Кардио-зона
-              a.main__buy Купить абонемент
+              a.main__buy(href="#season") Купить абонемент
             .main__img.main__img--desktop
               <!-- 1х: 508px; 2x: 1016px -->
-              +picture(desktop, "header-img-desktop", "508", "564", "Фитнес центр")
+              +picture(desktop, "jpg", "header-img-desktop", "508", "564", "Фитнес центр")
             .main__img.main__img--tablet
               <!-- 1х: 324px; 2x: 648px -->
-              +picture(mobile, "header-img-tablet", "324", "390", "Фитнес центр")
+              +picture(mobile, "jpg", "header-img-tablet", "324", "390", "Фитнес центр")
             ul.main__socials
               li
                 a(href="#") FB
@@ -56,30 +61,30 @@ html(lang="en")
               .gym__gym-wrapper
                 .gym__img.gym__img--desktop
                   <!-- 1х: 660px; 2x: 1320px -->
-                  +picture(desktop, "gum-desktop", "660", "401", "Тренажерный зал")
+                  +picture(desktop, "jpg", "gum-desktop", "660", "401", "Тренажерный зал")
                 .gym__img.gym__img--tablet
                   <!-- 1х: 678px; 2x: 1356px -->
-                  +picture(tablet, "gum-tablet", "678", "345", "Тренажерный зал")
+                  +picture(tablet, "jpg", "gum-tablet", "678", "345", "Тренажерный зал")
                 .gym__img.gym__img--mobile
                   <!-- 1х: 320px; 2x: 640px -->
-                  +picture(mobile, "gum-mobile", "320", "313", "Тренажерный зал")
+                  +picture(mobile, "jpg", "gum-mobile", "320", "313", "Тренажерный зал")
               .gym__video
                 .gym__video-img.gym__video-img--desktop
                   <!-- 1х: 364px; 2x: 728px -->
-                  +picture(desktop, "gum-video-desktop", "364", "228", "Видео тренажерного зала")
+                  +picture(desktop, "jpg", "gum-video-desktop", "364", "228", "Видео тренажерного зала")
                 .gym__video-img.gym__video-img--tablet
                   <!-- 1х: 266px; 2x: 532px -->
-                  +picture(tablet, "gum-video-tablet", "266", "167", "Видео тренажерного зала")
+                  +picture(tablet, "jpg", "gum-video-tablet", "266", "167", "Видео тренажерного зала")
                 .gym__video-img.gym__video-img--mobile
                   <!-- 1х: 320px; 2x: 640px -->
-                  +picture(mobile, "gum-video-mobile", "320", "167", "Видео тренажерного зала")
+                  +picture(mobile, "jpg", "gum-video-mobile", "320", "167", "Видео тренажерного зала")
                 button(type="button").gym__play
-                  img(src="img/play.png" width="73" height="73" alt="Запустить видео")
-        section.season
+                  img.lazyload(data-src="img/play.png" width="73" height="73" alt="Запустить видео")
+        section.season#season
           .season__barbells.season__barbells--desktop
-            +picture(desktop, "barbells-desktop", "287", "494", "Блины для штанги")
+            +picture(desktop, "png", "barbells-desktop", "287", "494", "Блины для штанги")
           .season__barbells.season__barbells--tablet
-            +picture(desktop, "barbells-tablet", "347", "444", "Блины для штанги")
+            +picture(desktop, "png", "barbells-tablet", "347", "444", "Блины для штанги")
           .container
             h2 Абонементы
             .season__buttons-wrapper
@@ -172,13 +177,13 @@ html(lang="en")
               a.promo__button(href="#") заполнить заявку
             .promo__img.promo__img--desktop
               <!-- 1х: 660px; 2x: 1320px -->
-              +picture(desktop, "promo-img-desktop", "660", "500", "Промо Super Games")
+              +picture(desktop, "jpg", "promo-img-desktop", "660", "500", "Промо Super Games")
             .promo__img.promo__img--tablet
               <!-- 1х: 386px; 2x: 772px -->
-              +picture(desktop, "promo-img-tablet", "386", "292", "Промо Super Games")
+              +picture(desktop, "jpg", "promo-img-tablet", "386", "292", "Промо Super Games")
             .promo__img.promo__img--mobile
               <!-- 1х: 290px; 2x: 580px -->
-              +picture(desktop, "promo-img-mobile", "290", "292", "Промо Super Games")
+              +picture(desktop, "jpg", "promo-img-mobile", "290", "292", "Промо Super Games")
         section.coaches
           .container
             h2.coaches__header Тренеры
@@ -212,44 +217,44 @@ html(lang="en")
               li.advantages__item
                 .advantages__images
                   <!-- 1х: 108px; 2x: 216px -->
-                  img(src="img/900.png" srcset="img/900@2x.png 2x" width="108" height="75" alt="Площадь 900 кв/м")
+                  img.lazyload(data-src="img/900.png" data-srcset="img/900@2x.png 2x" width="108" height="75" alt="Площадь 900 кв/м")
                   <!-- 1х: 89px; 2x: 178px -->
-                  img(src="img/900-tablet.png" srcset="img/900-tablet@2x.png 2x" width="89" height="63" alt="Площадь 900 кв/м")
+                  img.lazyload(data-src="img/900-tablet.png" data-srcset="img/900-tablet@2x.png 2x" width="89" height="63" alt="Площадь 900 кв/м")
                   <!-- 1х: 89px; 2x: 178px -->
-                  img(src="img/900-mobile.png" srcset="img/900-mobile@2x.png 2x" width="89" height="63" alt="Площадь 900 кв/м")
+                  img.lazyload(data-src="img/900-mobile.png" data-srcset="img/900-mobile@2x.png 2x" width="89" height="63" alt="Площадь 900 кв/м")
                 .advantages__text.advantages__text--900
                   h3 Площадь
                   p Занимайтесь без очередей и толпучки
               li.advantages__item
                 .advantages__images
                   <!-- 1х: 72px; 2x: 144px -->
-                  img(src="img/70.png" srcset="img/70@2x.png 2x" width="72" height="75" alt="Собственная парковка на 70 машин")
+                  img.lazyload(data-src="img/70.png" data-srcset="img/70@2x.png 2x" width="72" height="75" alt="Собственная парковка на 70 машин")
                   <!-- 1х: 59px; 2x: 118px -->
-                  img(src="img/70-tablet.png" srcset="img/70-tablet@2x.png 2x" width="59" height="63" alt="Собственная парковка на 70 машин")
+                  img.lazyload(data-src="img/70-tablet.png" data-srcset="img/70-tablet@2x.png 2x" width="59" height="63" alt="Собственная парковка на 70 машин")
                   <!-- 1х: 59px; 2x: 118px -->
-                  img(src="img/70-mobile.png" srcset="img/70-mobile@2x.png 2x" width="59" height="63" alt="Собственная парковка на 70 машин")
+                  img.lazyload(data-src="img/70-mobile.png" data-srcset="img/70-mobile@2x.png 2x" width="59" height="63" alt="Собственная парковка на 70 машин")
                 .advantages__text
                   h3 Собственная парковка
                   p Вы всегда найдете место для своей машины на нашей парковке
               li.advantages__item.advantages__item--350
                 .advantages__images
                   <!-- 1х: 108px; 2x: 216px -->
-                  img(src="img/350.png" srcset="img/350@2x.png 2x" width="108" height="75" alt="350 мест в зале")
+                  img.lazyload(data-src="img/350.png" data-srcset="img/350@2x.png 2x" width="108" height="75" alt="350 мест в зале")
                   <!-- 1х: 89px; 2x: 178px -->
-                  img(src="img/350-tablet.png" srcset="img/350-tablet@2x.png 2x" width="89" height="63" alt="350 мест в зале")
+                  img.lazyload(data-src="img/350-tablet.png" data-srcset="img/350-tablet@2x.png 2x" width="89" height="63" alt="350 мест в зале")
                   <!-- 1х: 89px; 2x: 178px -->
-                  img(src="img/350-mobile.png" srcset="img/350-mobile@2x.png 2x" width="89" height="63" alt="350 мест в зале")
+                  img.lazyload(data-src="img/350-mobile.png" data-srcset="img/350-mobile@2x.png 2x" width="89" height="63" alt="350 мест в зале")
                 .advantages__text
                   h3 Комфорт
                   p Просторные раздевалки, душевые, фен, Wi-Fi, кулеры
               li.advantages__item
                 .advantages__images
                   <!-- 1х: 70px; 2x: 140px -->
-                  img(src="img/5.png" srcset="img/5@2x.png 2x" width="70" height="75" alt="Тренерский опыт больше 5 лет")
+                  img.lazyload(data-src="img/5.png" data-srcset="img/5@2x.png 2x" width="70" height="75" alt="Тренерский опыт больше 5 лет")
                   <!-- 1х: 57px; 2x: 114px -->
-                  img(src="img/5-tablet.png" srcset="img/5-tablet@2x.png 2x" width="57" height="63" alt="Тренерский опыт больше 5 лет")
+                  img.lazyload(data-src="img/5-tablet.png" data-srcset="img/5-tablet@2x.png 2x" width="57" height="63" alt="Тренерский опыт больше 5 лет")
                   <!-- 1х: 57px; 2x: 114px -->
-                  img(src="img/5-mobile.png" srcset="img/5-mobile@2x.png 2x" width="57" height="63" alt="Тренерский опыт больше 5 лет")
+                  img.lazyload(data-src="img/5-mobile.png" data-srcset="img/5-mobile@2x.png 2x" width="57" height="63" alt="Тренерский опыт больше 5 лет")
                 .advantages__text
                   h3 Тренерский опыт
                   p Добивайтесь своих целей быстрее с профессиональным тренером
@@ -265,13 +270,13 @@ html(lang="en")
                   a(href="#") подробнее
                 .promo-actions__img.promo-actions__img--desktop
                   <!-- 1х: 280px; 2x: 560px -->
-                  +picture(desktop, "action-img-desktop", "280", "462", "Акция")
+                  +picture(desktop, "jpg", "action-img-desktop", "280", "462", "Акция")
                 .promo-actions__img.promo-actions__img--tablet
                   <!-- 1х: 399px; 2x: 798px -->
-                  +picture(tablet, "action-img-tablet", "399", "462", "Акция")
+                  +picture(tablet, "jpg", "action-img-tablet", "399", "462", "Акция")
                 .promo-actions__img.promo-actions__img--mobile
                   <!-- 1х: 290px; 2x: 580px -->
-                  +picture(mobile, "action-img-mobile", "290", "299", "Акция")
+                  +picture(mobile, "jpg", "action-img-mobile", "290", "299", "Акция")
               ul.promo-actions__list
                 li.promo-actions__item
                   h3 Месяц бесплатно
@@ -291,21 +296,21 @@ html(lang="en")
                 li.reviews__slide
                   .reviews__img
                     <!-- 1х: 80px; 2x: 160px -->
-                    img(src="img/avatar.png" srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Анна Орлова")
+                    img.lazyload(data-src="img/avatar.png" data-srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Анна Орлова")
                   .reviews__text
                     h3 Анна Орлова
                     p «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»
                 li.reviews__slide
                   .reviews__img
                     <!-- 1х: 80px; 2x: 160px -->
-                    img(src="img/avatar.png" srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Дед Мороз")
+                    img.lazyload(data-src="img/avatar.png" data-srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Дед Мороз")
                   .reviews__text
                     h3 Дед Мороз
                     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptates voluptatibus. Eaque tempore voluptatibus possimus fugit impedit vel tempora excepturi labore recusandae et, inventore soluta sequi commodi libero consequuntur atque.
                 li.reviews__slide
                   .reviews__img
                     <!-- 1х: 80px; 2x: 160px -->
-                    img(src="img/avatar.png" srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Иван Иванов")
+                    img.lazyload(data-src="img/avatar.png" data-srcset="img/avatar@2x.png 2x" width="80" height="80" alt="Иван Иванов")
                   .reviews__text
                     h3 Иван Иванов
                     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa odio facilis itaque! Incidunt facilis provident reiciendis neque, veritatis atque commodi ducimus cum id, repellat ipsam dignissimos, expedita officiis ipsum debitis.
@@ -341,8 +346,8 @@ html(lang="en")
                       a(href="mailto:omsk@supergym.ru") omsk@supergym.ru
       footer.footer
         .container
-          a.footer__logo(aria-label="Перейти на главную страницу")
-            svg.header__logo(width="87" height="20")
+          a(aria-label="Перейти на главную страницу")
+            svg.footer__logo(width="87" height="20")
               use(xlink:href="#logo")
           ul.footer__nav-list
             li.footer__nav-item

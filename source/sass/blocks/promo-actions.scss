@@ -93,7 +93,7 @@
 }
 
 .promo-actions__list {
-  flex-grow: 1;
+  width: 48.3%;
 
   list-style: none;
   padding: 0;
@@ -192,6 +192,7 @@
   }
 
   .promo-actions__list {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

@@ -3,21 +3,21 @@
   var tablet = "768"
   var mobile = "320"
 
-mixin picture(scale, src, width, height, alt)
+mixin picture(scale, format, src, width, height, alt)
   picture
-    source(media="(min-width: " + scale + "px)" srcset="img/" + src + ".webp 1x, img/" + src + "@2x.webp 2x" type="image/webp")
-    img(src="img/" + src + ".png" srcset="img/" + src + "@2x.png 2x" width= width height= height alt= alt)
+    source(media="(min-width: " + scale + "px)" data-srcset="img/" + src + ".webp 1x, img/" + src + "@2x.webp 2x" type="image/webp")
+    img.lazyload(data-src="img/" + src + "." + format data-srcset="img/" + src + "@2x." + format + " 2x" width= width height= height alt= alt)
 
 mixin card(name, url)
   .coaches__img-wrapper.coaches__img-wrapper--desktop
     <!-- 1х: 260px; 2x: 520px -->
-    +picture(desktop, url + "-desktop", 260, 294, name)
+    +picture(desktop, "jpg", url + "-desktop", 260, 294, name)
   .coaches__img-wrapper.coaches__img-wrapper--tablet
     <!-- 1х: 268px; 2x: 536px -->
-    +picture(tablet, url + "-tablet", 268, 294, name)
+    +picture(tablet, "jpg", url + "-tablet", 268, 294, name)
   .coaches__img-wrapper.coaches__img-wrapper--mobile
     <!-- 1х: 226px; 2x: 452px -->
-    +picture(mobile, url + "-mobile", 226, 274, name)
+    +picture(mobile, "jpg", url + "-mobile", 226, 274, name)
   h3.coaches__h3= name
   .coaches__desk
     p.coaches__name= name

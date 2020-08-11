@@ -9,8 +9,13 @@
   let sliderPagination = (cond, exp) => {
     if (cond) {
       for (let i = slideIndex; i < slideLength; i++) {
+        slides[i + exp].style.opacity = 0;
         slides[i].classList.remove(`reviews__slide--active`);
         slides[i + exp].classList.add(`reviews__slide--active`);
+
+        setTimeout(() => {
+          slides[i + exp].style.opacity = 1;
+        }, 100);
       }
 
       slideLength = slideLength + exp;

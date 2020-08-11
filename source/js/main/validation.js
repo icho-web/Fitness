@@ -1,6 +1,6 @@
 (function () {
   const NUMBER_LENGTH = 11;
-  const REGEX_NAME = /^[A-ZА-Я][a-za-я]+\s([A-ZА-Я][a-za-я]+\s[A-ZА-Я][a-za-я]+|[A-ZА-Я][a-za-я]+)/;
+  const REGEX_NAME = /(^[A-ZА-Я][а-яa-z]+$|^[A-ZА-Я][а-яa-z]+\s[A-ZА-Я][а-яa-z]+$|^[A-ZА-Я][а-яa-z]+\s[A-ZА-Я][а-яa-z]+\s[A-ZА-Я][а-яa-z]+$)/;
   let form = document.querySelector(`.contacts__form`);
   let inputTel = document.getElementById(`tel`);
   let inputName = document.getElementById(`name`);

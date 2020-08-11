@@ -16,8 +16,13 @@
   let sliderPagination = (cond, exp) => {
     if (cond) {
       for (let i = slideIndex; i < slideLength; i++) {
+        slides[i + exp].style.opacity = 0;
         slides[i].classList.remove(`coaches__slider-item--active`);
         slides[i + exp].classList.add(`coaches__slider-item--active`);
+
+        setTimeout(() => {
+          slides[i + exp].style.opacity = 1;
+        }, 100);
       }
 
       slideLength = slideLength + exp;
@@ -76,6 +81,7 @@
   window.addEventListener(`resize`, slideCount);
 
   buttonRight.addEventListener(`click`, () => {
+
     if (slides.length - slideLength >= summandUpdate()) {
       sliderPagination(slideLength < slides.length, +summand);
       buttonLeft.disabled = false;

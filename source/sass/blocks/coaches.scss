@@ -25,6 +25,7 @@
 
 .coaches__slider {
   display: flex;
+  height: 294px;
   justify-content: space-between;
   list-style: none;
   margin: 0;
@@ -35,6 +36,8 @@
   position: relative;
   display: none;
   width: 22.4%;
+
+  transition: 100ms ease-out;
 
   &--active {
     display: block;
@@ -285,6 +288,10 @@
     &--right {
       right: -33px;
     }
+  }
+
+  .coaches__slider {
+    height: 274px;
   }
 
   .coaches__slider-item {

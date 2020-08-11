@@ -46,6 +46,8 @@
     background-color: transparent;
     border: 0;
     border-bottom: 1px solid #74819c;
+    -webkit-appearance: none;
+    border-radius: 0;
 
     &:last-child {
       margin-right: 0;
